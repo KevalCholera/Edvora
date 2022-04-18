@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Edvora</string>
+    <string name="dhruv_singh">Dhruv Singh</string>
+    <string name="nearest">Nearest</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="past">Past</string>
+    <string name="rides">Rides:</string>
+    <string name="filters">Filters</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="states">States</string>
+    <string name="city">City</string>
+    <string name="ride_no">Ride No:</string>
+    <string name="original_station_no">Original Station No:</string>
+    <string name="station_path">Station Path</string>
+    <string name="date">Date</string>
+    <string name="distance">Distance</string>
+    <string name="no_data_found">No data Found</string>
+    <string name="clear_search">Clear Search</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="submit">Submit</string>
+</resources>
