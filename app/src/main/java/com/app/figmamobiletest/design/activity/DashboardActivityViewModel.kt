@@ -1,5 +1,6 @@
 package com.app.figmamobiletest.design.activity
 
+import android.util.Log
 import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -180,7 +181,7 @@ class DashboardActivityViewModel constructor(private val dashboardRepository: Da
     }
 
     private fun getRideFiltered(response: DashboardRidesResponse?): DashboardRidesResponse? {
-        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm aa")
+        val sdf = SimpleDateFormat("MM/dd/yyyy hh:mm a")
 
         if (response != null) {
 
@@ -216,11 +217,12 @@ class DashboardActivityViewModel constructor(private val dashboardRepository: Da
                 }
 
                 val strDate: Date? = sdf.parse(data.date.toString())
+                Log.i("TAG", "getRideFiltered: $strDate")
                 val currentDate: Date = Calendar.getInstance().time
 
                 if (strDate != null) {
-                    data.dateUpcoming = currentDate.after(strDate)
-                    data.datePast = currentDate.before(strDate)
+                    data.dateUpcoming = currentDate.time < strDate.time
+                    data.datePast = currentDate.time > strDate.time
 
                     if (data.stationPath != null && data.stationPath.isNotEmpty()) {
 
